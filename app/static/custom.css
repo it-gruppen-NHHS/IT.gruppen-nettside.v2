@@ -1,0 +1,38 @@
+html,
+body {
+    font-family: 'Merriweather', sans-serif !important;
+    background-color: #F4F7F6;
+    height: 100%;
+}
+.wrap {
+    min-height: 100%;
+}
+
+.main {
+    overflow: auto;
+    padding-bottom: 72px;
+}
+
+/* must be same height as the footer */
+
+#footer {
+    position: relative;
+    margin-top: -72px;
+    /* negative value of footer height */
+    height: 72px;
+    clear: both;
+}
+
+/* navbar settings */
+.bg-primary {
+    background-color: #002B4D !important;
+}
+
+#logged_out {
+    padding: 0 0.5em 0.6em;
+}
+
+
+#nav-heading {
+    padding-left: 0.5em;
+}

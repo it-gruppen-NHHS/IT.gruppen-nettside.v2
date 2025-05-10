@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Titel - 404 not found</title>
+
+  </head>
+  <body>
+  
+   {% extends "template.html" %}
+   {% set active_page = "" %}
+   {% block content %}
+    <!-- 404 Page Centered mid screen-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="display-1">404</h1>
+          <h2>Page not found</h2>
+          <p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
+          <a href="/" class="btn btn-primary">Go to Home</a>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+    
+  </body>
+</html>
