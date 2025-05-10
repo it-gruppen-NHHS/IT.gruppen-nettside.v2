@@ -11,6 +11,29 @@ encrypt = Encryption()
 '''
 Eksempel på hvordan man setter opp en tabell
 '''
+class home_about(db.Model):
+    """ Table for groups"""
+    __tablename__ = 'home_about'
+    id = db.Column(db.Integer,
+                        primary_key = True,
+                        autoincrement = True)
+    title = db.Column(db.String(200),
+                         index = False,
+                         unique = False,
+                         nullable = False)
+    maintext = db.Column(db.String(7000),
+                         index = False,
+                         unique = False,
+                         nullable = True)
+    project_text = db.Column(db.String(7000),
+                         index = False,
+                         unique = False,
+                         nullable = True)
+    system_text = db.Column(db.String(7000),
+                         index = False,
+                         unique = False,
+                         nullable = True)
+
 class Groups(db.Model):
     """ Table for groups"""
     __tablename__ = 'groups'

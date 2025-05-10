@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Board</title>
+
+  </head>
+  <body>
+  
+    {% extends "template.html" %}
+    {% set active_page = "" %}
+    {% block content %}
+    <header>
+    <title>
+        Styret
+    </title>
+    </header>
+
+
+
+    <h1 style="padding-bottom: 0"> Styret </h1>
+    <h4> Vår 25 </h4>
+        
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/images/leder25.jpg" class="card-img-top cropped" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Kim Alexander Antonsen</h5>
+                    <p class="card-text">Leder</p>
+                    <a href="mailto:it.leder@nhhs.no" class="btn btn-primary">Send mail</a>
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/images/oko25.jpg" class="card-img-top cropped" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Bark Tønder Nilsen</h5>
+                    <p class="card-text" >Økonomiansvarlig</p>
+                    <a href="mailto:it.oko@nhhs.no" class="btn btn-primary">Send mail</a>
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/images/info25.jpg" class="card-img-top cropped" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Martin Ravnberg</h5>
+                    <p class="card-text" >Informasjonsansvarlig</p>
+                    <a href="mailto:it.info@nhhs.no" class="btn btn-primary">Send mail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br></br>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/images/prosjekt25.png" class="card-img-top cropped" style="object-position: 45%;" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Marius Thomassen</h5>
+                    <p class="card-text" >Prosjektansvarlig</p>
+                    <a href="mailto:it.prosjekt@nhhs.no" class="btn btn-primary">Send mail</a>
+                    </div>
+                </div>
+            </div>
+            <br></br>
+            <div class="col-lg-3 d-flex justify-content-center">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/images/system25.jpg" class="card-img-top cropped" style="object-position: 45%;" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Joakim Sætre Breivik</h5>
+                    <p class="card-text" >Systemansvarlig</p>
+                    <a href="mailto:system@nhhs.no" class="btn btn-primary">Send mail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <div class="container" id="styrer">
+        <h4> Tidligere styrer </h4>
+        <div class="row d-flex justify-content-center"> <!-- Kim var leder -->
+            <img src="../static/images/h24.jpg" class="rounded img-fluid board-photo" alt="it-styret H24"> 
+            <figcaption class="figure-caption text-center"><b>Høsten 24.</b> Fra venstre: Per Ole Lande (Informasjonsansvarlig), Christian Bøe Eriksen (Økonomiansvarlig), Kim Alexander Antonsen (Leder) 
+                og Mikael Spurkeland Antoniazzi (Prosjektansvarlig).</figcaption>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <img src="../static/images/v24.jpg" class="rounded img-fluid board-photo" alt="it-styret V24"> <!-- Done -->
+            <figcaption class="figure-caption text-center"><b>Våren 24.</b> Fra venstre: Therese Ræder (Informasjonsansvarlig), Kim Alexander Antonsen (Prosjektansvarlig), Malin Franzon Amundsen (Økonomiansvarlig),
+                Christian Bøe Eriksen (Systemansvarlig) og Sara Helen Birkeland (Leder).</figcaption>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <img src="../static/images/h23.jpg" class="rounded img-fluid board-photo" alt="it-styret H23"> <!-- Done -->
+            <figcaption class="figure-caption text-center"><b>Høsten 23.</b> Fra venstre: Kim Alexander Antonsen (Prosjektansvarlig), Christian Bøe Eriksen (Systemansvarlig),
+                Sara Helen Birkeland (Leder), Alexander Zhao (Informasjonsansvarlig) og Magnus Malmanger (Økonomiansvarlig).</figcaption>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <img src="../static/images/v23.jpg" class="rounded img-fluid board-photo" alt="it-styret V23"> <!-- Done -->
+            <figcaption class="figure-caption text-center"><b>Våren 23.</b> Fra venstre: Per Olav Hagen Hallingstad (Systemansvarlig), Tora Lid (Økonomiansvarlig),
+                Brage Jørgensen Blix (Leder), Christian Bøe Eriksen (Prosjektansvarlig) og Alexander Zhao (Informasjonsansvarlig).</figcaption>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <img src="../static/images/h22.JPG" class="rounded img-fluid board-photo" alt="it-styret H22">
+            <figcaption class="figure-caption text-center"><b>Høsten 22.</b> Fra venstre: Pawel Margielewski (Økonomiansvarlig), Christian Bøe Eriksen (Prosjektansvarlig),
+                Selma Ødegaard Lauen (Informasjonsansvarlig), Brage Jørgensen Blix (Leder) og Per Olav Hagen Hallingstad (Systemansvarlig).</figcaption>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <img src="../static/images/v22.JPG" class="rounded img-fluid board-photo" alt="it-styret H21">
+            <figcaption class="figure-caption text-center"><b>Våren 22.</b> Fra venstre: Sondre Birkeland Eide (Prosjektansvarlig), 
+                William Sletsjøe (Systemansvarlig), Pawel Margielewski (Økonomiansvarlig) Selma Ødegaard Lauen (Informasjonsansvarlig) og Martin Vagle (Leder).</figcaption>
+        </div>
+        <br>
+        <div class="row d-flex justify-content-center my-auto">
+            <img src="../static/images/h21.jpeg" class="rounded img-fluid board-photo" alt="...">
+            <figcaption class="figure-caption text-center"><b>Høsten 21.</b> Fra venstre: Bjørnar Westbye Ølstad (Økonomiansvarlig), 
+                William Sletsjøe (Systemansvarlig), Amund Hannevik (Leder), Sondre Birkeland Eide (Prosjektansvarlig) og Maren Solvåg (Informasjonsansvarlig).</figcaption>
+        </div>
+        <br>
+    </div>
+    {% endblock %}
+    
+  </body>
+</html>

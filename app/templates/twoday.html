@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Twoday</title>
+
+  </head>
+  <body>
+  
+   {% extends "template.html" %}
+   {% set active_page = "" %}
+   {% block content %}
+    <div class="container">
+    <div class="row justify-content-md-center">
+      <img src="/static/images/twoday.png" class="twoday" alt="..." />
+      <h5>Tusen takk til vår hovedsamarbeidspartner Twoday!</h5>
+      <h6>
+        Mer info om Twoday finner du
+        <a href="https://twoday.no/" target="_blank" class="link-secondary"
+          >her</a
+        >.
+      </h6>
+    </div>
+    </div>
+  {% endblock %}
+    
+  </body>
+</html>
+

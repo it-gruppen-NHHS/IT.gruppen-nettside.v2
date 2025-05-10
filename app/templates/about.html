@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+
+  </head>
+  <body>
+  
+   {% extends "template.html" %}
+   {% set active_page = "" %}
+   {% block content %}
+    <div class  = "container">
+        <div class="row">
+            <h1 class="display-3">Om oss</h1>
+            <div class="col-12 col-sm-6 my-auto">
+                <p class="text-start fs-6 text-justify p-2">
+                    {{ about.maintext|safe }}
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 my-auto">
+            <img src="../static/images/group_logo/it.png" class="rounded" alt="it-gruppen 2022" width =95%>
+            <figcaption class="figure-caption text-center">Bilde av it.gruppens medlemmer (Høst 2022)</figcaption> 
+            </div>
+            <h2 class="display-6 mt-2 mb-4 text-center">Seksjoner</h2>
+        </div>
+        <div class="row justify-content-around">
+            <div class="col-12 col-md-6">
+                <div class="rounded mb-3" style="color:#0C3641; max-width: 95%; height:100%; background-color:#BDE9FC;">
+                    <div class="card-body">
+                    <h5 class="card-title text-center" style="color:0C3641;">Prosjekt</h5>
+                    <p class="card-text text-justify">
+                        {{ about.project_text|safe }}
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+            <div class="rounded mb-3" style="color:#0C3641; max-width: 95%; height:100%; background-color:#BDE9FC; ">
+                <div class="card-body">
+                    <h5 class="card-title text-center" style="color:0C3641;">System</h5>
+                    <p class="card-text text-justify">
+                        {{ about.system_text|safe }}
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    {% endblock %}
+  </body>
+</html>

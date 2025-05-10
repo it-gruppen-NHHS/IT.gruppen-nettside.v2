@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FAQ</title>
+
+  </head>
+  <body>
+  
+   {% extends "template.html" %}
+   {% set active_page = "" %}
+   {% block content %}
+    <div class = "container">
+    
+        <!--Section: FAQ-->
+
+        <section>
+        <h3 class="text-center mb-4 pb-2 text-success fw-bold"> FAQ </h3>
+            <p class="text-center mb-5">
+            Her finner du svar på ofte stilte spørsmål. Finner du ikke det du lurer på? Send mail til <a href="mailto:it.info@nhhs.no" class="text-success">it.info@nhhs.no</a>
+            </p>
+        
+            <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6  class="text-success"><i class="bi bi-cloud"></i> Hva er G Suite?</h6>
+                <p>
+                    G Suite eller Google Workspace som det også kalles er Google sin programpakke som vi i NHHS bruker. Dette er Google sin versjon av Microsofts' Office. 
+                    Her har alle NHH-studenter en en egen mail, kalender og skyløsning for å nevne noe. Er du tillitsvalg i NHHS er dette noe du kommer til å bruke mye.
+                </p>
+                <p>
+                    Du finner en fin guide med tips og triks <a href="https://docs.google.com/document/d/1DqJmYTUeTNU7VPPBSdWY3oRVVYnWt7aWDSNMPTFU5FM/edit?usp=sharing" class="link-secondary">her</a>
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="text-success"><i class="bi bi-key"></i> Hvordan logger jeg inn på NHHS kontoen?</h6>
+                <p>
+                    <ol type="1">
+                        <li>Gå til gsuite.nhhs.no</li>
+                        <li>Klikk "Neste"</li>
+                        <li>Klikk "Glemt passord"</li>
+                        <li>Om du blir bedt om å å skrive inn siste kjente passord, klikk “Prøv en annen måte/Try another way”.
+                        Du vil så få muligheten til å få tilsendt en lenke/verifikasjonskode til din NHH-mail, altså fornavn.etternavn@student.nhh.no ELLER s******@student.nhh.no.
+                        Dersom du har registrert et telefonnummer på kontoen din, vil du også kunne tilbakestille passordet ved hjelp av det</p></li>
+                    </ol>
+                </p>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="text-success"><i class="bi bi-lock"></i></i> Jeg er sperret ute av min NHHS-konto, hva gjør jeg?</h6>
+                <p>
+                    Har du prøvd å logge inn ved å følge stegene nevnt i forrige spørsmål, er det bare å sende mail til <a href="mailto:it.info@nhhs.no" class="link-secondary">it.info@nhhs.no</a> så fikser vi. <i>NB! Husk studentnummer!</i>
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="text-success"><i class="bi bi-window"></i> Jeg ønsker nettside til min gruppe/bedrift, hvordan går jeg fram? </h6>
+                <p>
+                    Snart vil dere kunne bestille via et form på nettsiden, men enn så lenge er det bare å sende mail til <a href="mailto:it.prosjekt@nhhs.no" class="link-secondary">it.prosjekt@nhhs.no</a>
+                    så ser vi når vi har kapasitet til det. 
+                </p>
+                <p> Det er viktig å presisere hva dere vil ha med av innhold på siden. Jo raskere og mer presise ønskene deres er, jo raskere går utviklingsdelen.
+                    Det er også en fordel å ha klar bilder etc. dere ønsker å ha på siden.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="text-success"><i class="bi bi-file-earmark-spreadsheet"></i> Hvordan oppdaterer jeg medlemsskjemaet?</h6>
+                <p>
+                Du må være innlogget på din NHHS-konto for å gjøre dette.
+                    <ol type="1">
+                        <li>Gå til drive.google.com</li>
+                        <li>Klikk på "Shared drives/Delte disker"</li>
+                        <li>Gå inn på styredriven til gruppen du ønsker å endre medlemsskjemaet til (f.eks. it.styret)</li>
+                        <li>Velg "Gruppeoversikt". På forsiden her endrer du styreroller. Klikk på pilen ned for å velge hvem som skal ha hvilken rolle.
+                        Er de ikke på listen kan det skyldes at de ikke er lagt inn som medlem. Dette gjør du under "Members". <i>NB! Husk å endre "implementation date"
+                        på forsiden til dagens dato.</i>
+                        </p></li>
+                    </ol>
+                En mer detaljert guide finner du <a href="https://docs.google.com/document/d/1N2pTK2Yh1aQR7yPzFFre8y3fJzyqNt9vvrMnYfYdboQ/edit?usp=sharing" class="link-secondary">her</a>
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6  class="text-success"><i class="bi bi-usb-c"></i> Har dere noe teknisk utstyr gruppen vår kan låne (skjermer, kabler, dockingstasjoner)? </h6>
+                <p>
+                    Helt sikkert! Send mail til <a href="mailto:system@nhhs.no" class="link-secondary">system@nhhs.no</a> med hva dere ønsker!
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6  class="text-success"><i class="bi bi-tools"></i> Vi har problemer med noe teknisk utstyr, kan dere hjelpe? </h6>
+                <p>
+                    Det kan vi! Send mail til <a href="mailto:system@nhhs.no" class="link-secondary">system@nhhs.no</a> om hva det gjelder eller stikk innom kontoret vårt i Fløien!
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <h6 class="text-success"><i class="bi bi-wordpress"></i> Hvordan oppdaterer vi vår Wordpress-side? </h6>
+                <p>
+                    Har dere egen Wordpress-side men ikke vet hvordan dere oppdaterer den er det bare å sende mail til <a href="mailto:it.prosjekt@nhhs.no" class="link-secondary">it.prosjekt@nhhs.no</a>.
+                    Da vil dere få en innføring i hvordan gjøre dette.
+                </p>
+            </div>
+
+            </div>
+        </section>
+        <!--Section: FAQ-->
+    </div>     
+  {% endblock %}
+    
+  </body>
+</html>

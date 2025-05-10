@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Galleri</title>
+
+  </head>
+  <body>
+  
+   {% extends "template.html" %}
+   {% set active_page = "" %}
+   {% block content %}
+    <h1>Gallery of IT.gruppen</h1>
+
+<!-- Gallery -->
+    <div class="row">
+
+  
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img 
+        src="../static/images/gallery.jpeg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="styretH21"
+      />
+  
+      <img
+        src="../static/images/gallery2.JPG"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Trondheim"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="../static/images/grilling.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Grilling"
+      />
+  
+      <img
+        src="../static/images/trondheim.jpeg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Trondheim igjen"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="../static/images/gallery3.jpeg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Oslo"
+      />
+  
+      <img
+        src="../static/images/gallery4.jpeg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Gutta i solnedgang"
+      />
+    </div>
+  </div>
+  <!-- Gallery -->
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img loading="lazy"
+        src="../static/images/jub_helegjengen.JPG"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Hele it på jub"
+      />
+  
+      <img loading="lazy"
+        src="../static/images/bereal.JPG"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Vafler"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img loading="lazy"
+        src="../static/images/itgenser.jpeg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Grilling"
+      />
+  
+      <img loading="lazy"
+        src="../static/images/jub_jenter.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Jentene på jub"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img loading="lazy" 
+        src="../static/images/jub_noen.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Noen på jub"
+      />
+  
+      <img loading="lazy"
+        src="../static/images/stand.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Gjengen på stand"
+      />
+    </div>
+  </div>
+  {% endblock %}
+    
+  </body>
+</html>

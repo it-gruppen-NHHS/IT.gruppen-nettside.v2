@@ -10,8 +10,57 @@
     {% extends "template.html" %}
     {% set active_page = "home" %}
     {% block content %}
-
-
+    <div class="container">
+        <div class="container">
+            <div class="row" style="padding-top: 12%; padding-bottom: 28%" id="forside">
+                <div class="col-lg-6 my-auto">
+                    <h1 class="display-3">it.gruppen</h1>
+                    <h1 class="display-5">NHHS</h1>
+                </div>
+                <div class="col col-lg-6 text-center my-auto">
+                    <img src="/static/images/coder.gif" style="width: 70%;">
+                </div>
+            </div>
+        </div>
+        <div class  = "container">
+            <div class="row">
+                <h1 class="display-3">Om oss</h1>
+                <div class="col-12 col-sm-6 my-auto">
+                    <p class="text-start fs-6 text-justify p-2">
+                        {{ about.maintext|safe }}
+                    </p>
+                </div>
+                <div class="col-12 col-sm-6 my-auto">
+                <img src="../static/images/v25gruppebilde.jpg" class="rounded" alt="it-gruppen 2025" width =100%>
+                <figcaption class="figure-caption text-center">Picture of IT.gruppen  (Spring 2025)</figcaption> 
+                </div>
+                <h2 class="display-6 mt-2 mb-4 text-center">Seksjoner</h2>
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-12 col-md-6">
+                    <div class="rounded mb-3" style="color:#0C3641; max-width: 95%; height:100%; background-color:#BDE9FC;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" style="color:0C3641;">Prosjekt</h5>
+                                <p class="card-text text-justify">
+                                    {{ about.project_text|safe }}
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="rounded mb-3" style="color:#0C3641; max-width: 95%; height:100%; background-color:#BDE9FC; ">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" style="color:0C3641;">System</h5>
+                                <p class="card-text text-justify">
+                                    {{ about.system_text|safe }}
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br></br>
     {% endblock %} 
     
 </body>

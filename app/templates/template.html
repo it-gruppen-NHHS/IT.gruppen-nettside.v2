@@ -5,13 +5,6 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-  <script type="text/javascript" charset="utf8" src="../static/customScript.js"></script>
-=======
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -33,7 +26,6 @@
   <link rel="stylesheet" href="http://t4t5.github.io/sweetalert/dist/sweetalert.css"> 
 
 
->>>>>>> bc73c2fcccb29623f6e489a6fadf35381a55ec93
   <!--Tables-->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css">
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
@@ -48,97 +40,74 @@
   <div class="wrap">
     <!-- Creating navbar and setting active page -->
       {% set navigation_bar = [
-          ('/', 'home', 'Hjem')
-        ] 
+          ('/', 'home', 'Hjem'),
+          ('/projects', 'projects', 'Prosjekter'),
+          ('/faq', 'faq', 'FAQ'),
+          ('#', None, 'Om oss', [
+            ('/about', 'about', 'Medlemmer'),
+            ('/board', 'board', 'IT.styret'),
+            ('/gallery', 'galleri', 'Galleri'),
+            ('/twoday', 'twoday', 'Twoday')
+          ]),
+        ]
       -%}
+
 
     {% set active_page = active_page|default('home') -%}
 
 
-    <div class="main">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand" href="/">
-              <h4 class="notranslate" style="margin-bottom: 0;" id="nav-heading">ProsjektNavn</h4>
-          </a>
-  
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="container-fluid">
+            
+            <a class="navbar-brand" href="/">
+              <img src="../static/images/it-logo-hvit.png" width="50" alt="it.gruppen logo"/>
+              <span>it.gruppen</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto">
-                  {% for href, id, caption in navigation_bar %}
-                  <li class="nav-item{% if id == active_page %} active{% endif %}">
-                      <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
-                  </li>
-                  {% endfor %}
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index: 1001;">
+              <ul class="navbar-nav mr-auto">
+                {% for item in navigation_bar %}
+                  {% if item|length == 4 %}
+                    <!-- Dropdown menu -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle {% if item[3]|selectattr('1', 'equalto', active_page)|list %}active{% endif %}"
+                         href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ item[2] }}
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for sub in item[3] %}
+                          <a class="dropdown-item {% if active_page == sub[1] %}active{% endif %}" href="{{ sub[0] }}">{{ sub[2] }}</a>
+                        {% endfor %}
+                      </div>
+                    </li>
+                  {% else %}
+                    <!-- Regular menu item -->
+                    <li class="nav-item">
+                      <a class="nav-link {% if active_page == item[1] %}active{% endif %}" href="{{ item[0] }}">{{ item[2] }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
               </ul>
-  
-              <!-- GOOGLE SIGN IN -->
-              <div class="navbar-nav" style="padding-right: 5%;">
-                  <script src="https://accounts.google.com/gsi/client" defer></script>
-  
-                  <div id="signed_in" style="display: block;">
-                      <div id="g_id_onload"
-                           data-client_id="your-client-id.apps.googleusercontent.com"
-                           data-context="signin" 
-                           data-auto_select="true"
-                           data-ux_mode="popup" data-login_uri="{{ session['glogin_uri'] }}"
-                           data-auto_prompt="false">
-                      </div>
-  
-                      <div class="g_id_signin"
-                           data-type="standard"
-                           data-shape="rectangular"
-                           data-theme="outline"
-                           data-text="signin_with"
-                           data-size="large"
-                           data-logo_alignment="left">
-                      </div>
-                  </div>
-  
-                  <!-- Signout button -->
-                  <div class="g_id_signout" id="signed_out" style="display: none; padding-bottom: 2%; padding-right: 5%;">
-                      <button type="button" class="g_id_signout" onclick="signOut();"
-                              style="background-color: rgb(255, 255, 255); display: inline-flex; align-items: center; color: rgba(0, 0, 0, 0.54); box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px; padding: 0px; border-radius: 2px; border: 1px solid transparent; font-size: 14px; font-weight: 500; font-family: Roboto, sans-serif;">
-                          <div style="margin-right: 10px; background: rgb(255, 255, 255); padding: 10px; border-radius: 2px;">
-                              <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                                  <g fill="#000" fill-rule="evenodd">
-                                      <path d="M9 3.48c1.69 0 2.83.73 3.48 1.34l2.54-2.48C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.96l2.91 2.26C4.6 5.05 6.62 3.48 9 3.48z"
-                                            fill="#EA4335"></path>
-                                      <path d="M17.64 9.2c0-.74-.06-1.28-.19-1.84H9v3.34h4.96c-.1.83-.64 2.08-1.84 2.92l2.84 2.2c1.7-1.57 2.68-3.88 2.68-6.62z"
-                                            fill="#4285F4"></path>
-                                      <path d="M3.88 10.78A5.54 5.54 0 0 1 3.58 9c0-.62.11-1.22.29-1.78L.96 4.96A9.008 9.008 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.92-2.26z"
-                                            fill="#FBBC05"></path>
-                                      <path d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.84-2.2c-.76.53-1.78.9-3.12.9-2.38 0-4.4-1.57-5.12-3.74L.97 13.04C2.45 15.98 5.48 18 9 18z"
-                                            fill="#34A853"></path>
-                                      <path fill="none" d="M0 0h18v18H0z"></path>
-                                  </g>
-                              </svg>
-                          </div>
-                          <span style="padding: 10px 10px 10px 0px; font-weight: 500;">Logout</span>
-                      </button>
-                  </div>
-              </div>
-              <!-- End of signin -->
-  
               <!-- NHHS logo -->
-              <div class="col-m">
+              <div class="col-m" id="'NHHS-logo'">
                   <a class="navbar-brand" href="https://www.nhhs.no" target="_blank">
                       <img src="../static/images/nhhsLogos/nhhsLogoHvit.png" height="30" class="d-inline-block align-top"
                            alt="">
                   </a>
               </div>
+            </div>
           </div>
-      </nav>
+        </nav>
   
       <div class="container">
           {% block content %}
           {% endblock %}
       </div>
-    </div>
-  </div>
 
     
     <div id="footer">
@@ -146,7 +115,7 @@
       <footer class="bg-light text-center text-lg-start">
          <!-- Copyright  -->
         <div class="text-center p-3" style="color:#1F4766;">
-          © 2024
+          © 2025
           <a class="text-dark" href="https://it.nhhs.no"> it.gruppen</a>
     
           <img src="../static/images/group_logo/it.png"  height="40" style="padding-left: 0.5%;">

@@ -7,7 +7,7 @@ from encryption import Encryption
 from sqlalchemy.sql.functions import user
 from werkzeug.security import generate_password_hash
 # Under import all classes from models.py
-from models import encrypt, Groups
+from models import encrypt, Groups, home_about, db
 from flask_debugtoolbar import DebugToolbarExtension
 from sqlalchemy.sql.expression import func
 from sqlalchemy import desc, null, true, update, and_
@@ -15,10 +15,12 @@ from oauthlib.oauth2 import WebApplicationClient
 from flask_session import Session
 import flask_login
 from google_auth_oauthlib.flow import Flow
+from dotenv import load_dotenv
 
+load_dotenv()
 
 app = flask.Flask(__name__)
-app.secret_key = "s_key"     # Secret key for sessions
+app.secret_key = "11d56c24aad491f45aac7a00f7adf03a3d922122682f276b"     # Secret key for sessions
 
 ## Flask login initialisations
 login_manager = flask_login.LoginManager()
@@ -57,47 +59,21 @@ if mode == 'development':
 # Database settings
 
 
+app.debug = True
+encrypt.development()
+toolbar = DebugToolbarExtension(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{os.getenv('MY_SQL_USER')}:{os.getenv('MY_SQL_PASSWORD')}@{os.getenv('MY_SQL_URL')}/it_nettside"
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
-# Read other schema in same db connection
-from sqlalchemy.sql import text
-
-def create_class(name, fields):
-    """Dynamically creates a class."""
-    return type(name, (object,), fields)
-
-def read_from_other_schema_into_class(db, schema, table):
-    """
-    input: db, schema, table
-    output: list of class instances
-    Description: Reads all rows from a table in a different schema and creates a class instance for each row.
-    """
-    query = text(f"SELECT * FROM {schema}.{table}")
-    result = db.engine.execute(query)
-    columns = result.keys()
-
-    entities = []
-    for row in result.fetchall():
-        # Map column names to row values for the current row
-        fields = dict(zip(columns, row))
-        
-        # Create a class name based on the table name (could be adjusted for naming conventions)
-        ClassName = ''.join(word.title() for word in table.split('_'))
-        
-        # Dynamically create a class with the row data
-        EntityClass = create_class(ClassName, fields)
-        
-        # Instantiate the class and add it to the entities list
-        entity = EntityClass()
-        entities.append(entity)
-    
-    return entities
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_POOL_SIZE'] = 50
+app.config['SQLALCHEMY_MAX_OVERFLOW'] = 50
 
 
-
-
-
-
-
+db.init_app(app) #adds the app to the database from models.py
+with app.app_context():
+    db.create_all()
 
 
 
