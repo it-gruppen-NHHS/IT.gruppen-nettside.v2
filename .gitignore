@@ -1,3 +1,10 @@
-/app/__pycache__
-/app/flask_session
-venv
+.vscode/
+__pycache__/
+flask_session
+app/encryption
+key.txt
+app/static/CSV
+app/run/secrets
+venv/
+.venv
+.env
