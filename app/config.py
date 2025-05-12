@@ -20,7 +20,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = flask.Flask(__name__)
-app.secret_key = "11d56c24aad491f45aac7a00f7adf03a3d922122682f276b"     # Secret key for sessions
 
 ## Flask login initialisations
 login_manager = flask_login.LoginManager()
